@@ -56,9 +56,30 @@
 
 // <----------------------------------- OS Module --------------------------------------->
 
-const os = require('os')
+// const os = require('os')
 
-console.log('Platform:',os.platform()); // os.platform() it will return the Platform Detail of our System
-console.log('CPU Arcitecture:',os.arch());
-console.log('Total Memory:',os.totalmem());
-console.log('Free Memory:',os.freemem());
+// console.log('Platform:',os.platform()); // os.platform() it will return the Platform Detail of our System
+// console.log('CPU Arcitecture:',os.arch());
+// console.log('Total Memory:',os.totalmem());
+// console.log('Free Memory:',os.freemem());
+
+
+// <------------------------------------- URL Module ----------------------------------------->
+// URL module Help us to Parse and construct the URL making it Easy to handle web addess
+
+// const url = require('url')
+
+// const myUrl = new URL('https://example.com:8080/path/name?query=hello#hash')
+// console.log('Host',myUrl.host);
+// console.log('Pathname',myUrl.pathname);
+// console.log('Search Params',myUrl.searchParams.get('query'));
+
+// <--------------------------------------- Crypto Module --------------------------------------------->
+// Crypto Module is used to Encrypt and Decrypt the Data (it provides us the Cryptography funcationalities)
+
+// const crypto = require('crypto')
+
+// const hash = crypto.createHash('sha256')
+// hash.update('Hello, World!')
+
+// console.log(hash.digest('hex'));
