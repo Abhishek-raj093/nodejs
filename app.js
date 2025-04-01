@@ -83,3 +83,41 @@
 // hash.update('Hello, World!')
 
 // console.log(hash.digest('hex'));
+
+// <------------------------------------------- Custom Core Module -------------------------------------------------->
+
+// const sayHello = require('./greetings')
+
+// const message = sayHello('Developers')
+
+// console.log(message);
+
+//  <------------------------------------------- How to Export Multiple module From the Single File -------------------------------------------------->
+
+// const math = require('./math')
+
+// console.log(math.add(5,3))
+// console.log(math.subtract(5,3))
+
+
+// <------------------------------------------------ Now we will Learn How to Use NPM (Node Package Manager) ------------------------------------------------->
+// NPM (It is A default Package Manager for the NodeJs It allows us to install, Update and Delete the Package or Libraries) is the Package Manager for Node.js. It is used to install and manage packages 
+// npm i lodash this is the Package to manage the Array and String efficiently
+
+// const lodash = require('lodash')
+
+// const numbers = [1,2,3,4,5]
+// const reversed = lodash.reverse(numbers)
+
+// console.log(reversed)
+
+// How we install the npm Package  only for the Development Purposes
+// npm i (here we write the Package name) --save-dev
+
+// How to Update any Packages
+// npm update (here we write the Package Name)
+
+// How to remove the Package
+// npm uninstall (here we write the Package Name)
+
+// <-------------------------------------------- File System (Streams) ------------------------------------------------>
