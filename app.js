@@ -121,3 +121,33 @@
 // npm uninstall (here we write the Package Name)
 
 // <-------------------------------------------- File System (Streams) ------------------------------------------------>
+// const fs = require('fs') // We use this File System to Perform the Streams Operation
+
+// Here we Read the File Using redableStream,
+// const redableStream = fs.createReadStream('example.txt', {encoding:'utf8'})
+ 
+// redableStream.on('data', (chunk)=>{
+//     console.log(chunk)
+// })
+
+// redableStream.on('end', ()=>{
+//     console.log('File Read Successfully')
+// })
+
+// redableStream.on('error', (err)=>{
+//     console.error('Error', err)
+// })
+
+// Here we will see How to Write a file Using the WriteStream
+
+const fs = require('fs')
+
+const WritableStream = fs.createWriteStream('output2.txt')
+
+WritableStream.write('Hello,'); // Here we write the Data in the form of Chunks because it will help us to manage the memory in the Server
+WritableStream.write('How are you?');
+WritableStream.end()
+
+WritableStream.on('finish', ()=>{
+    console.log('File Write Successfully')
+})
