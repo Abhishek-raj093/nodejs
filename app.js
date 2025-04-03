@@ -140,14 +140,155 @@
 
 // Here we will see How to Write a file Using the WriteStream
 
-const fs = require('fs')
+// const fs = require('fs')
 
-const WritableStream = fs.createWriteStream('output2.txt')
+// const WritableStream = fs.createWriteStream('output2.txt')
 
-WritableStream.write('Hello,'); // Here we write the Data in the form of Chunks because it will help us to manage the memory in the Server
-WritableStream.write('How are you?');
-WritableStream.end()
+// WritableStream.write('Hello,'); // Here we write the Data in the form of Chunks because it will help us to manage the memory in the Server
+// WritableStream.write('How are you?');
+// WritableStream.end()
 
-WritableStream.on('finish', ()=>{
-    console.log('File Write Successfully')
-})
+// WritableStream.on('finish', ()=>{
+//     console.log('File Write Successfully')
+// })
+
+
+// <------------------------------------------------ Piping Streams -------------------------------------------------->
+
+// const fs = require('fs')
+
+// const redableStream = fs.createReadStream('example.txt')
+
+// const WritableStream = fs.createWriteStream('example-output.txt')
+
+// redableStream.pipe(WritableStream)
+
+// WritableStream.on('finish', ()=>{
+//     console.log('File Copied Successfully.')
+// })
+
+// Here we will See How Perform Operations on Large Files (Here we used example.txt as Large File)
+
+// const fs = require('fs')
+
+// const readline = require('readline')
+
+// const redableStream = fs.createReadStream('example.txt')
+
+// const rl = readline.createInterface({input: redableStream})
+
+// rl.on('line',(line)=>{
+//     console.log('Line:', line);
+// })
+
+// rl.on('close',()=>{
+//     console.log('Finished processing the file.');
+// })
+
+// <--------------------------------------------- Working With Directories in NodeJS -------------------------------------------------->
+
+// 1. Creating a Directory
+// a. Asynchronous: fs.mkdir()
+
+// const fs = require('fs')
+
+// fs.mkdir('newDirectory', (err)=>{
+//     if(err){
+//         return console.error('Error creating directory:', err)
+//     }
+//     console.log('Directory created successfully');
+// })
+
+// b. Synchronous: fs.mkdirSync()
+
+// const fs = require('fs')
+
+// fs.mkdirSync('newDirectory2')
+// console.log('Directory created successfully');
+
+//2. Reading a Directory
+
+// const fs = require('fs')
+
+// fs.readdir('./', (err,files)=>{
+//     if(err){
+//         return console.error('Error reading directory:', err)
+//     }
+//     console.log('Files in directory:', files);
+// })
+
+// Here we Read the File Using Synchronous Method
+
+// const fs = require('fs')
+
+// const files = fs.readdirSync('./')
+// console.log('Directory content', files);
+
+// 3. Checking if a Directory Exists 
+
+// const fs = require('fs')
+
+// const dirName = 'newDirectory'
+
+// if(fs.existsSync(dirName)) {
+//     console.log('Directory exists');
+// } else {
+//     console.log('Directory does not exist');
+// }
+
+// 4. Removing a Directory
+//a. Asnchronous:fs.rmdir()
+
+// const fs = require('fs')
+
+// fs.rmdir('newDirectory',(err)=>{ //It will Delete the only Directtory which is Empty
+//     if(err){
+//         return console.error('Error removing directory:', err)
+//     }
+//     console.log('Directory removed successfully');
+// })
+
+
+// const fs = require('fs')
+
+// fs.rm('newDirectory2',{recursive:true},(err)=>{ //It will Delete the Directtory which Contain the files as well
+//     if(err){
+//         return console.error('Error removing directory:', err)
+//     }
+//     console.log('Directory removed successfully');
+// })
+
+
+// 5. Renaming a Directory
+
+// const fs = require('fs')
+
+// fs.rename('folder1','folder2',(err)=>{
+//     if(err){
+//         return console.error('Error renaming directory:', err)
+//     }
+//     console.log('Directory renamed successfully!');
+// })
+
+// 6. Getting Directory S6tats
+
+// const fs = require('fs')
+
+// fs.stat('./',(err,stats)=>{
+//     if(err){
+//         return console.error('Error getting stats:', err)
+//     }
+//     console.log('Directory stats:',stats);
+//     console.log('is directory:',stats.isDirectory()); //If the given path ('./') is an folder than it will return true else it will return false
+// })
+
+// 7. Watching a Directory
+
+// const fs = require('fs')
+
+// fs.watch('./', (eventType, filename)=>{
+//     console.log(`Event type: ${eventType}`);
+//     if (filename) [
+//         console.log(`Filename: ${filename}`)
+//     ]
+// })
