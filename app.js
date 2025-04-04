@@ -292,3 +292,59 @@
 //         console.log(`Filename: ${filename}`)
 //     ]
 // })
+
+// <-------------------------------------------------- Handling HTTP Requests and Responses (Implemted in the Server.js File) ------------------------------------------------->
+
+
+// <----------------------------------------------- Here we willl Create the Event ----------------------------------------------------->
+
+const EventEmitter = require('events') // Here we will Get the EventEmitter Module
+
+const emitter = new EventEmitter() // Here we will Create the EventEmitter Object
+
+// Registering an Event Listener
+// emitter.on('test1', () => { // Here we will Register the Event Listener
+//     console.log('Event occurred!') // Here we will Print the Message when the Event Occurred
+// })
+
+// emitter.emit('test1') // Here we will Emit the Event (it will call the Event Listener)
+
+// Here we Register multiple Event Listeners for the same Event
+// emitter.on('test1', () => { 
+//     console.log('Event occurred1!');
+// })
+
+// emitter.on('test1', () => { 
+//     console.log('Event occurred2!');
+// })
+
+// emitter.emit('test1')
+
+// Here we will Emit the Event (it will call the Event Listener)
+// emitter.on('test1', () => { 
+//     console.log('Event occurred1!');
+// })
+
+// emitter.emit('test1')
+// emitter.removeListener('test1')
+// emitter.emit('test1') // It will Show Error because we have removed the Event Listener
+
+// Here we Do Error Handling using EventEmitter
+
+emitter.on('test1', () => { 
+    console.log('Event occurred1!');
+})
+
+emitter.on('error', (err) => { 
+    console.error('Error occurred:', err.message); // Here we will Print the Error Message
+})
+
+try {
+
+    emitter.emit('test1')
+    emitter.removeListener('test1')
+    emitter.emit('test1')
+    
+} catch (error) {
+    emitter.emit('error', error) // Here we will Emit the Error Event
+}
